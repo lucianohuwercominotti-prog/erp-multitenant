@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const pool = require('../config/database');
+const { pool } = require('../config/database');
 
 // Cadastro de Admin
 router.post('/admin/register', async (req, res) => {
