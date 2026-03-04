@@ -4,7 +4,14 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
+// CORS configurado corretamente
+app.use(cors({
+  origin: ['https://erp-frontend-liart-five.vercel.app', 'http://localhost:3000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
